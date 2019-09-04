@@ -13,13 +13,18 @@ public protocol AddTrainerContentDelegate: AnyObject {
     func addTrainer(_ trainer: Trainer)
 }
 
-open class AddTrainerContent {
+class AddTrainerContent: Content{
     
-    public weak var delegate: AddTrainerContentDelegate?
+    override func loadData(completion: @escaping () -> Void) {
+        self.setLoaded(true)
+        completion()
+    }
     
-    @objc final func createNewTrainer() {
+    @objc func createNewTrainer() {
+        
         //For sake of simplicity it is hardcoded
         let newTrainer = Trainer(with: ["name": "Alan Smith"])
-        self.delegate?.addTrainer(newTrainer)
+        self.delegate?.baseDelegate(withKey: .createTrainer, [DictionaryKey.trainerKey.rawValue : newTrainer])
+        
     }
 }

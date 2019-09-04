@@ -13,40 +13,47 @@ public protocol AddTrainerControllerDelegate: AnyObject {
     func addNewTrainerAndReload(_ trainer: Trainer)
 }
 
-class AddTrainerController: UIViewController {
+class AddTrainerController: Controller {
     
     var content:AddTrainerContent = AddTrainerContent()
     var contentView:AddTrainerContentView!
+    
     public weak var delegate: AddTrainerControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         self.view.backgroundColor = .white
-        self.loadContent()
-        self.bindContentView()
+        self.startController()
     }
     
-    func loadContent(){
+    override func getContent() -> Content {
+        return self.content
+    }
+    
+    override func loadContent(){
         self.content.delegate = self
-        
+        self.content.loadData {
+            self.bindView()
+        }
     }
     
-    func bindContentView(){
-        
-        self.view.subviews.forEach({ $0.removeFromSuperview() })
-        
+    override func loadContentView() {
         self.contentView = AddTrainerContentView(frame: self.view.bounds, content: self.content)
         self.view.addSubview(self.contentView)
     }
+
 }
 
-extension AddTrainerController: AddTrainerContentDelegate{
+extension AddTrainerController: ContentDelegate{
    
-    func addTrainer(_ trainer: Trainer) {
+    func baseDelegate(withKey key: BaseKey, _ dictionary: [String : Any]?) {
         
-        self.dismiss(animated: true, completion: nil)
-        self.delegate?.addNewTrainerAndReload(trainer)
-        
+        if key == .createTrainer,
+            let trainer = dictionary?[DictionaryKey.trainerKey.rawValue] as? Trainer{
+            
+            self.dismiss(animated: true, completion: nil)
+            self.delegate?.addNewTrainerAndReload(trainer)
+        }
     }
 }

@@ -8,28 +8,11 @@
 
 import Foundation
 
-public protocol ContentDelegate: AnyObject {
+class TrainersContent: Content {
     
-    func showAlertWithTrainerName(_ name: String)
+    private var trainers: [Trainer] = []
     
-    func reloadData()
-}
-
-open class TrainersContent {
-    
-    public var trainers: [Trainer] = []
-    ///True if data are loaded
-    public var loaded: Bool = false
-    ///True if an error occurred while loading
-    public var loadError: Bool = false
-    
-    public weak var delegate: ContentDelegate?
-    
-    public init() {
-        
-    }
-    
-    open func loadData(completion:@escaping () -> Void) {
+    open override func loadData(completion:@escaping () -> Void) {
         
         self.setLoaded(false)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -42,31 +25,29 @@ open class TrainersContent {
                     
                 })
                 self.sortTrainers()
+                self.dataSource = [self.trainers]
                 self.setLoaded(true)
                 completion()
                 
             } catch {
                 
-                self.trainers = []
-                self.setLoadError()
+                self.dataSource = []
+                self.setLoadError("Something went wrong")
                 completion()
                 
             }
         }
     }
-    
-    public final func setLoaded(_ load: Bool) {
-        self.loaded = load
-        self.loadError = false
-    }
-    
-    public final func setLoadError() {
-        self.loaded = true
-        self.loadError = true
-    }
 }
 
 extension TrainersContent{
+    
+    func addTrainer(_ trainer: Trainer){
+    
+        self.trainers.append(trainer)
+        self.sortTrainers()
+        self.dataSource = [self.trainers]
+    }
     
     func sortTrainers(){
         self.trainers = self.trainers.sorted(by: { (trainerA, trainerB) -> Bool in

@@ -1,5 +1,5 @@
 //
-//  BaseDelegate.swift
+//  ContentDelegate.swift
 //  CCC
 //
 //  Created by Alessio Sardella on 07/05/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseDelegate: AnyObject {
+protocol ContentDelegate: AnyObject {
     
     ///Use this method for comunicating updates from the ContentView throught the Content, to the Controller
     func baseDelegate(withKey key: BaseKey, _ dictionary: [String: Any]?)
@@ -17,7 +17,7 @@ protocol BaseDelegate: AnyObject {
     func pushNext(withKey key: BaseKey, _ dictionary: [String: Any]?)
 }
 
-extension BaseDelegate {
+extension ContentDelegate {
     //This is needed to make the method optional
     func baseDelegate(withKey key: BaseKey, _ dictionary: [String: Any]?){
         
@@ -35,5 +35,10 @@ enum BaseKey {
     case pushAddNewTrainer
     case reloadData
     case showAlert
+    case createTrainer
+}
 
+enum DictionaryKey: String{
+    case stringKey
+    case trainerKey
 }

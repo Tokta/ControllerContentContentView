@@ -8,27 +8,23 @@
 
 import UIKit
 
-open class AddTrainerContentView: UIView {
+class AddTrainerContentView: ContentView {
     
-    public var content: AddTrainerContent!
+    var addTrainerContent: AddTrainerContent{
+        return self.content as! AddTrainerContent
+    }
     
-    public init(frame: CGRect, content: AddTrainerContent) {
+    override init(frame: CGRect, content: Content) {
         
-        super.init(frame: frame)
-        self.content = content
+        super.init(frame: frame, content: content)
         
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: frame.size.width - 20, height: 50))
         button.backgroundColor = .black
         button.center = self.center
         button.setTitle("Add Trainer", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self.content, action: #selector(self.content.createNewTrainer), for: .touchUpInside)
+        button.addTarget(self.content, action: #selector(self.addTrainerContent.createNewTrainer), for: .touchUpInside)
         addSubview(button)
         
-    }
-    
-    @available(*, unavailable)
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
 }
