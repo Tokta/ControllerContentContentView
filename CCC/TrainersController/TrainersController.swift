@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrainersController: UIViewController {
+class TrainersController: Controller {
 
     var content:TrainersContent = TrainersContent()
     var contentView:TrainersContentView!
@@ -16,45 +16,28 @@ class TrainersController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Trainer", style: .plain, target: self, action: #selector(presentAddNewTrainerController))
-        self.loadContent()
-        self.bindContentView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Trainer",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(presentAddNewTrainerController))
+        self.startController()
     }
 
-    func loadContent(){
+    override func getContent() -> Content{
+        return self.content
+    }
+    
+    override func loadContent(){
         self.content.delegate = self
         self.content.loadData {
-            self.bindContentView()
+            self.bindView()
         }
     }
     
-    func bindContentView(){
+    override func loadContentView() {
         
-        self.view.subviews.forEach({ $0.removeFromSuperview() })
-        
-        if !self.content.loaded{
-            
-            self.showMessage("Loading...")
-            
-        }else if self.content.loadError{
-            
-            self.showMessage("Something went wrong")
-            
-        }else{
-            
-            self.contentView = TrainersContentView(frame: self.view.bounds, content: self.content)
-            self.view.addSubview(self.contentView)
-        }
-    }
-    
-    func showMessage(_ message:String){
-        //Show error
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 20))
-        label.center = self.view.center
-        label.text = message
-        label.textAlignment = .center
-        label.textColor = .black
-        self.view.addSubview(label)
+        self.contentView = TrainersContentView(frame: self.view.bounds, content: self.content)
+        self.view.addSubview(self.contentView)
     }
     
     @objc func presentAddNewTrainerController(){
@@ -67,6 +50,22 @@ class TrainersController: UIViewController {
 
 extension TrainersController: ContentDelegate{
    
+    func baseDelegate(withKey key: BaseKey, _ dictionary: [String: Any]?){
+        
+        switch key{
+        case .reloadData:
+                self.reloadData()
+            
+        case .showAlert:
+            if let trainerName = dictionary?[DictionaryKey.stringKey.rawValue] as? String{
+                self.showAlertWithTrainerName(trainerName)
+            }
+            
+        default:
+            print("BaseKey not used")
+        }
+    }
+    
     func showAlertWithTrainerName(_ name: String) {
         
         let alert = UIAlertController(title: "Trainer", message: name, preferredStyle: .alert)
@@ -77,9 +76,9 @@ extension TrainersController: ContentDelegate{
     
     func reloadData(){
         self.content.setLoaded(false) // set the Content as not loaded
-        self.bindContentView() // reload the View to show a loading screen
+        self.bindView() // reload the View to show a loading screen
         self.content.loadData { // reload Content data
-            self.bindContentView() // reload view to show the ContentView
+            self.bindView() // reload view to show the ContentView
         }
     }
 }
@@ -88,8 +87,7 @@ extension TrainersController: AddTrainerControllerDelegate{
     
     func addNewTrainerAndReload(_ trainer: Trainer) {
         
-        self.content.trainers.append(trainer)
-        self.content.sortTrainers()
+        self.content.addTrainer(trainer)
         self.contentView.tableView.reloadData()
         
     }

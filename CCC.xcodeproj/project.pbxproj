@@ -7,39 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CAB0BB712281AA9000646E76 /* AddTrainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB0BB702281AA9000646E76 /* AddTrainerController.swift */; };
-		CAB0BB732281AAB700646E76 /* AddTrainerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB0BB722281AAB700646E76 /* AddTrainerContent.swift */; };
-		CAB0BB752281AB4C00646E76 /* AddTrainerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB0BB742281AB4C00646E76 /* AddTrainerContentView.swift */; };
-		CAB0BB772281D27800646E76 /* BaseContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB0BB762281D27800646E76 /* BaseContent.swift */; };
-		CAB0BB792281D2DA00646E76 /* BaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB0BB782281D2DA00646E76 /* BaseDelegate.swift */; };
 		CAB7BFD82272F56300A0D6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFD72272F56300A0D6C1 /* AppDelegate.swift */; };
-		CAB7BFDA2272F56300A0D6C1 /* TrainersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFD92272F56300A0D6C1 /* TrainersController.swift */; };
 		CAB7BFDF2272F56500A0D6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB7BFDE2272F56500A0D6C1 /* Assets.xcassets */; };
 		CAB7BFE22272F56500A0D6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB7BFE02272F56500A0D6C1 /* LaunchScreen.storyboard */; };
-		CAB7BFEA2272F57100A0D6C1 /* TrainersContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFE92272F57100A0D6C1 /* TrainersContent.swift */; };
-		CAB7BFEC2272F58000A0D6C1 /* TrainersContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFEB2272F58000A0D6C1 /* TrainersContentView.swift */; };
 		CAB7BFF02272F78D00A0D6C1 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFEE2272F78D00A0D6C1 /* JSONReader.swift */; };
-		CAB7BFF12272F78D00A0D6C1 /* trainers.json in Resources */ = {isa = PBXBuildFile; fileRef = CAB7BFEF2272F78D00A0D6C1 /* trainers.json */; };
-		CAB7BFF32272FC9A00A0D6C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BFF22272FC9A00A0D6C1 /* Model.swift */; };
+		CAD0456123200149001A440F /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0455B23200149001A440F /* Controller.swift */; };
+		CAD0456223200149001A440F /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0455C23200149001A440F /* Content.swift */; };
+		CAD0456323200149001A440F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0455D23200149001A440F /* ContentView.swift */; };
+		CAD0456423200149001A440F /* ContentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0455E23200149001A440F /* ContentDelegate.swift */; };
+		CAD0456523200149001A440F /* ContentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0455F23200149001A440F /* ContentError.swift */; };
+		CAD045682320016F001A440F /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD045662320016F001A440F /* Trainer.swift */; };
+		CAD045692320016F001A440F /* trainers.json in Resources */ = {isa = PBXBuildFile; fileRef = CAD045672320016F001A440F /* trainers.json */; };
+		CAD0456D2320018B001A440F /* AddTrainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0456A2320018B001A440F /* AddTrainerController.swift */; };
+		CAD0456E2320018B001A440F /* AddTrainerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0456B2320018B001A440F /* AddTrainerContent.swift */; };
+		CAD0456F2320018B001A440F /* AddTrainerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD0456C2320018B001A440F /* AddTrainerContentView.swift */; };
+		CAD04573232001BF001A440F /* TrainersContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD04570232001BF001A440F /* TrainersContent.swift */; };
+		CAD04574232001BF001A440F /* TrainersContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD04571232001BF001A440F /* TrainersContentView.swift */; };
+		CAD04575232001BF001A440F /* TrainersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD04572232001BF001A440F /* TrainersController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CAB0BB702281AA9000646E76 /* AddTrainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrainerController.swift; sourceTree = "<group>"; };
-		CAB0BB722281AAB700646E76 /* AddTrainerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrainerContent.swift; sourceTree = "<group>"; };
-		CAB0BB742281AB4C00646E76 /* AddTrainerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrainerContentView.swift; sourceTree = "<group>"; };
-		CAB0BB762281D27800646E76 /* BaseContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContent.swift; sourceTree = "<group>"; };
-		CAB0BB782281D2DA00646E76 /* BaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDelegate.swift; sourceTree = "<group>"; };
 		CAB7BFD42272F56300A0D6C1 /* CCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB7BFD72272F56300A0D6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAB7BFD92272F56300A0D6C1 /* TrainersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainersController.swift; sourceTree = "<group>"; };
 		CAB7BFDE2272F56500A0D6C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB7BFE12272F56500A0D6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAB7BFE32272F56500A0D6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAB7BFE92272F57100A0D6C1 /* TrainersContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainersContent.swift; sourceTree = "<group>"; };
-		CAB7BFEB2272F58000A0D6C1 /* TrainersContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainersContentView.swift; sourceTree = "<group>"; };
 		CAB7BFEE2272F78D00A0D6C1 /* JSONReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
-		CAB7BFEF2272F78D00A0D6C1 /* trainers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainers.json; sourceTree = "<group>"; };
-		CAB7BFF22272FC9A00A0D6C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CAD0455B23200149001A440F /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		CAD0455C23200149001A440F /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		CAD0455D23200149001A440F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CAD0455E23200149001A440F /* ContentDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDelegate.swift; sourceTree = "<group>"; };
+		CAD0455F23200149001A440F /* ContentError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentError.swift; sourceTree = "<group>"; };
+		CAD045662320016F001A440F /* Trainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
+		CAD045672320016F001A440F /* trainers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainers.json; sourceTree = "<group>"; };
+		CAD0456A2320018B001A440F /* AddTrainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTrainerController.swift; path = ../TrainersController/AddTrainerController.swift; sourceTree = "<group>"; };
+		CAD0456B2320018B001A440F /* AddTrainerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTrainerContent.swift; path = ../TrainersController/AddTrainerContent.swift; sourceTree = "<group>"; };
+		CAD0456C2320018B001A440F /* AddTrainerContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTrainerContentView.swift; path = ../TrainersController/AddTrainerContentView.swift; sourceTree = "<group>"; };
+		CAD04570232001BF001A440F /* TrainersContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersContent.swift; sourceTree = "<group>"; };
+		CAD04571232001BF001A440F /* TrainersContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersContentView.swift; sourceTree = "<group>"; };
+		CAD04572232001BF001A440F /* TrainersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,9 @@
 		CAB0BB7E2281DCE000646E76 /* TrainersController */ = {
 			isa = PBXGroup;
 			children = (
-				CAB7BFD92272F56300A0D6C1 /* TrainersController.swift */,
-				CAB7BFE92272F57100A0D6C1 /* TrainersContent.swift */,
-				CAB7BFEB2272F58000A0D6C1 /* TrainersContentView.swift */,
+				CAD04570232001BF001A440F /* TrainersContent.swift */,
+				CAD04571232001BF001A440F /* TrainersContentView.swift */,
+				CAD04572232001BF001A440F /* TrainersController.swift */,
 			);
 			path = TrainersController;
 			sourceTree = "<group>";
@@ -66,20 +72,11 @@
 		CAB0BB7F2281DCEE00646E76 /* AddTrainerController */ = {
 			isa = PBXGroup;
 			children = (
-				CAB0BB702281AA9000646E76 /* AddTrainerController.swift */,
-				CAB0BB722281AAB700646E76 /* AddTrainerContent.swift */,
-				CAB0BB742281AB4C00646E76 /* AddTrainerContentView.swift */,
+				CAD0456B2320018B001A440F /* AddTrainerContent.swift */,
+				CAD0456C2320018B001A440F /* AddTrainerContentView.swift */,
+				CAD0456A2320018B001A440F /* AddTrainerController.swift */,
 			);
 			path = AddTrainerController;
-			sourceTree = "<group>";
-		};
-		CAB0BB802281DCFC00646E76 /* BaseClasses */ = {
-			isa = PBXGroup;
-			children = (
-				CAB0BB762281D27800646E76 /* BaseContent.swift */,
-				CAB0BB782281D2DA00646E76 /* BaseDelegate.swift */,
-			);
-			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		CAB7BFCB2272F56300A0D6C1 = {
@@ -102,10 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				CAB7BFD72272F56300A0D6C1 /* AppDelegate.swift */,
+				CAD0455923200149001A440F /* 3CClasses */,
 				CAB7BFED2272F78D00A0D6C1 /* Data */,
 				CAB0BB7E2281DCE000646E76 /* TrainersController */,
 				CAB0BB7F2281DCEE00646E76 /* AddTrainerController */,
-				CAB0BB802281DCFC00646E76 /* BaseClasses */,
 				CAB7BFDE2272F56500A0D6C1 /* Assets.xcassets */,
 				CAB7BFE02272F56500A0D6C1 /* LaunchScreen.storyboard */,
 				CAB7BFE32272F56500A0D6C1 /* Info.plist */,
@@ -116,11 +113,23 @@
 		CAB7BFED2272F78D00A0D6C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CAB7BFF22272FC9A00A0D6C1 /* Model.swift */,
+				CAD045662320016F001A440F /* Trainer.swift */,
 				CAB7BFEE2272F78D00A0D6C1 /* JSONReader.swift */,
-				CAB7BFEF2272F78D00A0D6C1 /* trainers.json */,
+				CAD045672320016F001A440F /* trainers.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		CAD0455923200149001A440F /* 3CClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CAD0455B23200149001A440F /* Controller.swift */,
+				CAD0455C23200149001A440F /* Content.swift */,
+				CAD0455D23200149001A440F /* ContentView.swift */,
+				CAD0455E23200149001A440F /* ContentDelegate.swift */,
+				CAD0455F23200149001A440F /* ContentError.swift */,
+			);
+			path = 3CClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAB7BFE22272F56500A0D6C1 /* LaunchScreen.storyboard in Resources */,
-				CAB7BFF12272F78D00A0D6C1 /* trainers.json in Resources */,
 				CAB7BFDF2272F56500A0D6C1 /* Assets.xcassets in Resources */,
+				CAD045692320016F001A440F /* trainers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,17 +203,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAB0BB792281D2DA00646E76 /* BaseDelegate.swift in Sources */,
-				CAB7BFDA2272F56300A0D6C1 /* TrainersController.swift in Sources */,
+				CAD04574232001BF001A440F /* TrainersContentView.swift in Sources */,
+				CAD0456523200149001A440F /* ContentError.swift in Sources */,
+				CAD0456323200149001A440F /* ContentView.swift in Sources */,
 				CAB7BFF02272F78D00A0D6C1 /* JSONReader.swift in Sources */,
+				CAD0456123200149001A440F /* Controller.swift in Sources */,
 				CAB7BFD82272F56300A0D6C1 /* AppDelegate.swift in Sources */,
-				CAB0BB732281AAB700646E76 /* AddTrainerContent.swift in Sources */,
-				CAB7BFF32272FC9A00A0D6C1 /* Model.swift in Sources */,
-				CAB0BB712281AA9000646E76 /* AddTrainerController.swift in Sources */,
-				CAB7BFEC2272F58000A0D6C1 /* TrainersContentView.swift in Sources */,
-				CAB0BB752281AB4C00646E76 /* AddTrainerContentView.swift in Sources */,
-				CAB0BB772281D27800646E76 /* BaseContent.swift in Sources */,
-				CAB7BFEA2272F57100A0D6C1 /* TrainersContent.swift in Sources */,
+				CAD0456E2320018B001A440F /* AddTrainerContent.swift in Sources */,
+				CAD0456223200149001A440F /* Content.swift in Sources */,
+				CAD0456F2320018B001A440F /* AddTrainerContentView.swift in Sources */,
+				CAD04573232001BF001A440F /* TrainersContent.swift in Sources */,
+				CAD0456D2320018B001A440F /* AddTrainerController.swift in Sources */,
+				CAD045682320016F001A440F /* Trainer.swift in Sources */,
+				CAD0456423200149001A440F /* ContentDelegate.swift in Sources */,
+				CAD04575232001BF001A440F /* TrainersController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

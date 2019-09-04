@@ -8,16 +8,14 @@
 
 import UIKit
 
-open class TrainersContentView: UIView {
+class TrainersContentView: ContentView {
     
-    public var content: TrainersContent!
     var tableView: UITableView = UITableView(frame: CGRect.zero)
     var refreshControl: UIRefreshControl!
     
-    public init(frame: CGRect, content: TrainersContent) {
+    override init(frame: CGRect, content: Content) {
         
-        super.init(frame: frame)
-        self.content = content
+        super.init(frame: frame, content: content)
         
         tableView = UITableView(frame: self.bounds, style: UITableView.Style.plain)
         tableView.delegate = self
@@ -37,23 +35,18 @@ open class TrainersContentView: UIView {
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
         self.refreshControl.endRefreshing()
-        self.content.delegate?.reloadData()
-    }
-    
-    @available(*, unavailable)
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        self.content.delegate?.baseDelegate(withKey: .reloadData, nil)
     }
 }
 
 extension TrainersContentView: UITableViewDelegate, UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.content.dataSource.count
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.content.trainers.count
+        return (self.content.dataSource[section] as? [Any])?.count ?? 0
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,14 +56,26 @@ extension TrainersContentView: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell()
-        cell.textLabel?.text = self.content.trainers[indexPath.row].name ?? ""
+        
+        if let trainers = self.content.dataSource[indexPath.section] as? [Trainer],
+            trainers.count > indexPath.row{
+            let trainer = trainers[indexPath.row]
+            cell.textLabel?.text = trainer.name ?? ""
+            
+        }
+        
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.content.delegate?.showAlertWithTrainerName(self.content.trainers[indexPath.row].name ?? "")
+        if let trainers = self.content.dataSource[indexPath.section] as? [Trainer],
+            trainers.count > indexPath.row{
+            
+            let trainer = trainers[indexPath.row]
+            self.content.delegate?.baseDelegate(withKey: .showAlert, [DictionaryKey.stringKey.rawValue : trainer.name as Any])
+            
+        }
     }
-    
 }
 
