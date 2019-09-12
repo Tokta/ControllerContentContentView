@@ -50,10 +50,11 @@ extension AddTrainerController: ContentDelegate{
     func baseDelegate(withKey key: BaseKey, _ dictionary: [String : Any]?) {
         
         if key == .createTrainer,
-            let trainer = dictionary?[DictionaryKey.trainerKey.rawValue] as? Trainer{
+            let trainer = dictionary?[DictionaryKey.trainerKey] as? Trainer{
             
-            self.dismiss(animated: true, completion: nil)
-            self.delegate?.addNewTrainerAndReload(trainer)
+            self.dismiss(animated: true, completion: {
+                self.delegate?.addNewTrainerAndReload(trainer)
+            })
         }
     }
 }

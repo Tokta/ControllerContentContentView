@@ -12,11 +12,10 @@ class Content {
     
     public var dataSource: [Any] = []
     public weak var delegate: ContentDelegate?
-    public var currentTab: Int = 0
     
     ///True if data are loaded
     private(set) var loaded: Bool = false
-    ///True if an error occured while loading
+    ///Contain an erro if it occured while loading
     private(set) var loadError: ContentError = ContentError()
     
     init() {
@@ -24,9 +23,7 @@ class Content {
     }
     
     func loadData(completion:@escaping () -> Void) {
-        
-        //Override in subclass
-        
+        fatalError("Override in subclass")
     }
     
     public final func setLoaded(_ load: Bool) {

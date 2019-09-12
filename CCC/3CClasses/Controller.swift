@@ -17,7 +17,6 @@ class Controller: UIViewController {
     
     func getContent() -> Content{
         fatalError("Override in subclass")
-        return Content()
     }
     
     func loadContent(){
@@ -29,6 +28,8 @@ class Controller: UIViewController {
     }
     
     final func bindView(){
+        
+        self.view.subviews.forEach{$0.removeFromSuperview()}
         
         if !self.getContent().loaded{
             

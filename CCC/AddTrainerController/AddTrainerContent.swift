@@ -8,11 +8,6 @@
 
 import Foundation
 
-public protocol AddTrainerContentDelegate: AnyObject {
-    
-    func addTrainer(_ trainer: Trainer)
-}
-
 class AddTrainerContent: Content{
     
     override func loadData(completion: @escaping () -> Void) {
@@ -23,8 +18,8 @@ class AddTrainerContent: Content{
     @objc func createNewTrainer() {
         
         //For sake of simplicity it is hardcoded
-        let newTrainer = Trainer(with: ["name": "Alan Smith"])
-        self.delegate?.baseDelegate(withKey: .createTrainer, [DictionaryKey.trainerKey.rawValue : newTrainer])
+        let newTrainer = Trainer(with: ["name": "Abigail Smith", "birthdate" : "1899-12-03T02:59:07 -01:00"])
+        self.delegate?.baseDelegate(withKey: .createTrainer, [DictionaryKey.trainerKey : newTrainer])
         
     }
 }

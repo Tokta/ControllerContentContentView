@@ -17,7 +17,7 @@ struct ContentError {
         
         if let error = error {
             self.text = error
-            isError = !self.text.isEmpty
+            self.isError = !self.text.isEmpty
         }
     }
 }

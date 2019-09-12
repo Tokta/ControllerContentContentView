@@ -55,13 +55,14 @@ extension TrainersContentView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         
         if let trainers = self.content.dataSource[indexPath.section] as? [Trainer],
             trainers.count > indexPath.row{
-            let trainer = trainers[indexPath.row]
-            cell.textLabel?.text = trainer.name ?? ""
             
+            let trainer = trainers[indexPath.row]
+            cell.textLabel?.text = trainer.name
+            cell.detailTextLabel?.text = "birthday: " + trainer.getBirthday()
         }
         
         return cell
@@ -73,7 +74,7 @@ extension TrainersContentView: UITableViewDelegate, UITableViewDataSource {
             trainers.count > indexPath.row{
             
             let trainer = trainers[indexPath.row]
-            self.content.delegate?.baseDelegate(withKey: .showAlert, [DictionaryKey.stringKey.rawValue : trainer.name as Any])
+            self.content.delegate?.baseDelegate(withKey: .showAlert, [DictionaryKey.stringKey : trainer.name as Any])
             
         }
     }

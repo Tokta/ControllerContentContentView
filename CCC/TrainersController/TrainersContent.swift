@@ -12,9 +12,9 @@ class TrainersContent: Content {
     
     private var trainers: [Trainer] = []
     
-    open override func loadData(completion:@escaping () -> Void) {
+    override func loadData(completion:@escaping () -> Void) {
         
-        self.setLoaded(false)
+        self.resetLoadError()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             
             do {

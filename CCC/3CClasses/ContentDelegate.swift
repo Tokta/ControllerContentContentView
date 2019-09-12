@@ -38,7 +38,7 @@ enum BaseKey {
     case createTrainer
 }
 
-enum DictionaryKey: String{
-    case stringKey
-    case trainerKey
+struct DictionaryKey{
+    static let stringKey = "stringKey"
+    static let trainerKey = "trainerKey"
 }

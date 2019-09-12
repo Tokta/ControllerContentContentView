@@ -54,10 +54,10 @@ extension TrainersController: ContentDelegate{
         
         switch key{
         case .reloadData:
-                self.reloadData()
+            self.reloadData()
             
         case .showAlert:
-            if let trainerName = dictionary?[DictionaryKey.stringKey.rawValue] as? String{
+            if let trainerName = dictionary?[DictionaryKey.stringKey] as? String{
                 self.showAlertWithTrainerName(trainerName)
             }
             
